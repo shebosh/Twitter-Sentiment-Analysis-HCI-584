@@ -2,6 +2,8 @@ import tweepy
 import time
 import pandas as pd
 import re
+from sentiment_analysis import SentimentAnalysis
+
 
 class tweet_analyzer():
     def __init__(self):
@@ -19,7 +21,7 @@ class tweet_analyzer():
         y = 0
         for item in search:
             for response in tweepy.Paginator(self.client.search_all_tweets, 
-                                 query = f'#{item} lang:en',
+                                 query = f'#{item} -is:retweet lang:en',
                                  user_fields = ['username','description'],
                                  tweet_fields = [ 'text',"created_at"],
                                  expansions = 'author_id',
@@ -39,11 +41,14 @@ class tweet_analyzer():
                     data["created_at"][y] = tweet["data"]["created_at"]
                   
                     y += 1
+        print(data["text"][0])
+        self.get_data_for_analysis(data["text"][0])
 
-        # (pd.DataFrame.from_dict(data=data, orient='index')
-    # .to_csv('dict_file.csv', header=False))
-    
-    
-    # print(result)
+
+
+    def get_data_for_analysis(self, data):
+        SentimentAnalysis.analyzer(data)
+        
+
 
 
