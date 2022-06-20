@@ -39,14 +39,20 @@ while end_time > start_time:
                             expansions = 'author_id',
                             #start_time = '2021-01-20T00:00:00Z',
                             #end_time = '2022-01-21T00:00:00Z',
+                            start_time = start_time,
                             end_time = end_time, 
                             max_results=500).flatten(limit=500)
 
     time.sleep(3)
 
+    # if we got no tweets back, we've run out of tweets and can quit the while loop
+    # this could happen if the start_time is actually earlier than the earliest possible tweet
+    # need to use a flag here b/c tweets is a generator so I can't ask it for it's len()
+    got_any_tweets = False
 
     # go through all tweets we got so far
     for i, tweet in enumerate(tweets):      
+        got_any_tweets = True
         date = tweet["created_at"]
         print(n+i, date)
 
@@ -54,6 +60,10 @@ while end_time > start_time:
         for k in ["created_at", "author_id", "geo", "text"]:
             data[k].append(tweet[k])
     
+    if got_any_tweets == False:
+        print("No more tweets, done!")
+        break
+
     # update total number of tweets and set next end date
     n += i
     end_time = date # use date of last tweet as end_date for next request
@@ -64,11 +74,6 @@ while end_time > start_time:
     df.to_csv('tweets.csv', header=True, index=False)
     print("Saved", n, "tweets, ending at", date)
 
-
-    
-
-
-#fo.close()
 
 
 
