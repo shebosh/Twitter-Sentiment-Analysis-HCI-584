@@ -3,7 +3,7 @@ import time
 import pandas as pd
 
 
-client = tweepy.Client("AAAAAAAAAAAAAAAAAAAAAEKKdgEAAAAAqmpzyvS98w%2Ba%2BweD%2FO7YK19kqTA%3DYbEgLyHsYGHBNRt18lTvs6eRXRtfI0JOyYoX8dUmFGD5XsXQ3B")
+client = tweepy.Client("your key")
 
 
 obama = []
