@@ -23,7 +23,7 @@ def clean(text):
 
 def tweets_to_csv(keyword, city):
 
-    client = tweepy.Client("AAAAAAAAAAAAAAAAAAAAAEKKdgEAAAAAqmpzyvS98w%2Ba%2BweD%2FO7YK19kqTA%3DYbEgLyHsYGHBNRt18lTvs6eRXRtfI0JOyYoX8dUmFGD5XsXQ3B")
+    client = tweepy.Client("your key")
 
     # make query: https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query
     #query = f'"{keyword}" has:geo place:"{city}" lang:en -is:retweet'   # Not sure if has:geo is needed as we use place already?
