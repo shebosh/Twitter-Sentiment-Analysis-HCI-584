@@ -16,3 +16,13 @@ and the time.
 
 The program, then, allows the user to do a Sentiment Analysis on the csv files and displays the results of the analysis in bar charts,
 allowing the user to compare two US cities about one key word.
+
+
+**#Requirements**
+
+Twitter Developer Account with API keys
+Tweepy (pip install)		
+Pandas
+Datetime
+Re
+Transformers (pip install)
