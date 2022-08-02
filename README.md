@@ -7,6 +7,8 @@ The program does the search based on key word (topic), location (a US city) and 
 
 Twitter API keys are required for this project. They can be acquired through opening up a Twitter Developer Account in this link: [Developer Account] (https://developer.twitter.com/en/apply-for-access) and applying for a project. With the academic research option, it is possible to scrape up to 10 million tweets a month.  
 
+Run this in your terminal before you run the Sentiment Analysis: !pip install transformers
+
 Here is the list of libraries for this project:
 * Tweepy
 * Time
