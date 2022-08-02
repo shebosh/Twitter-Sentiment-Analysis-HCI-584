@@ -34,5 +34,5 @@ Using the Pandas library, columns are created for making the data frame later on
 The next step is data visualization. Using the Pandas library, bar charts are created.
 
 ![Sentiment Analysis](Step15_results.png)
-![Houston vs Chicago for Abortion](Step16_results.png)
+![Houston vs Chicago for Abortion](step16_results.png)
 
