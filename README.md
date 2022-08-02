@@ -23,7 +23,9 @@ Here is the list of libraries for this project:
 
 What topic are you most curious about? Are you wondering what Twitter users are saying about it in your hometown? In the capital city of your state? Or the biggest US cities? All of these questions can be answered with this program!
 
-Go to the main.py and change the following code with your topic and city: 
+Firstly, go to the main.py and enter your Client key in the following code: client = tweepy.Client("your key").
+
+Then, change the following code with your topic and city to run a query: 
 
 df = tweets_to_csv("Abortion", "Houston")
 
